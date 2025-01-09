@@ -15,6 +15,6 @@ jobs:
       - name: Pull from Gitee
         run: |
           git remote add gitee https://gitee.com/Pridejoy/MalusAdmin.git
-          git fetch gitee main
-          git merge gitee/main
-          git push origin main
+          git fetch gitee master
+          git merge gitee/master
+          git push origin master
