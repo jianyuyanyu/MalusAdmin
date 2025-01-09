@@ -1,4 +1,4 @@
-name: Pull from Gitee2501091712
+name: Pull from Gitee
 
 on:
   schedule:
@@ -8,21 +8,16 @@ on:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Git identity
         run: |
           git config --global user.email "pridejoy@foxmail.com"
           git config --global user.name "Malus"
-
-      - name: Remove workflow file
-        run: |
-          rm -f .github/workflows/pull-from-gitee.yml
 
       - name: Pull from Gitee
         run: |
